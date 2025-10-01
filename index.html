@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trinity Tech Solutions Pvt Ltd — DevSecOps</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r152/three.min.js"></script>
+<style>
+:root{
+  --bg:#071025; --card:#0f1724; --muted:#98a2b3; --accent:#36d399;
+  --glass: rgba(255,255,255,0.03); --glass-2: rgba(255,255,255,0.02); --glass-border: rgba(255,255,255,0.04); --maxw:1200px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:Inter,system-ui;background:var(--bg);color:#e6eef6;line-height:1.45;scroll-behavior:smooth;}
+header{position:sticky;top:0;background:rgba(7,16,37,0.85);backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,0.03);z-index:50;}
+.nav{max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 20px;}
+.brand{display:flex;align-items:center;gap:10px;}
+.logo{width:46px;height:46px;border-radius:12px;background:linear-gradient(135deg,#09203f,#0f3b2d);display:flex;justify-content:center;align-items:center;color:var(--accent);font-weight:800;font-size:20px;}
+.nav-links{display:flex;gap:18px;align-items:center;}
+.nav-links a{color:#d8eaf0;text-decoration:none;font-weight:600;padding:8px 12px;border-radius:8px;transition:all .18s;}
+.nav-links a:hover{background:rgba(255,255,255,0.02);color:var(--accent);}
+.nav-links a.active{color:var(--accent);border-bottom:2px solid var(--accent);}
+.cta{background:linear-gradient(90deg,var(--accent),#2bd9a3);color:#032129;padding:10px 14px;border-radius:10px;font-weight:700;cursor:pointer;transition:all .2s;}
+.cta:hover{transform:scale(1.05);}
+section{max-width:var(--maxw);margin:60px auto;padding:0 20px;}
+h2.section-title{font-size:28px;color:#e6fbf5;margin-bottom:24px;position:relative;}
+h2.section-title::after{content:'';width:60px;height:3px;background:var(--accent);position:absolute;left:0;bottom:-6px;border-radius:2px;}
+.grid{display:grid;gap:18px;}
+.services-grid{grid-template-columns:repeat(auto-fit,minmax(240px,1fr));}
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px;border:1px solid var(--glass-border);transition:all .3s ease;cursor:pointer;}
+.card:hover{transform:translateY(-10px) scale(1.02);box-shadow:0 18px 40px rgba(2,6,23,0.6);}
+.card h3{margin-bottom:8px;color:var(--accent);}
+.card p{font-size:14px;color:var(--muted);}
+.hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin-top:32px;}
+.hero-left{padding:28px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:14px;border:1px solid var(--glass-border);}
+.title{font-size:36px;margin:16px 0 10px;color:#e8fbf6;}
+.lead{color:var(--muted);margin-bottom:20px;}
+.pill{background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));padding:10px 12px;border-radius:10px;border:1px solid rgba(255,255,255,0.02);font-weight:600;font-size:13px;color:#cfeee2;margin:4px;display:inline-block;}
+.hero-right.panel{height:420px;border-radius:14px;border:1px solid var(--glass-border);position:relative;overflow:hidden;padding:18px;background:linear-gradient(180deg, rgba(0,0,0,0.08), rgba(255,255,255,0.02));}
+#three-container{position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;}
+.code-window{position:relative;z-index:2;background:linear-gradient(180deg,#041226,#071f2c);border:1px solid rgba(255,255,255,0.02);border-radius:12px;padding:12px;margin-top:12px;height:180px;overflow:hidden;}
+.code-stream{position:absolute;inset:0;pointer-events:none;}
+.column{position:absolute;bottom:0;white-space:nowrap;font-family:monospace;font-size:12px;color:rgba(86,236,181,0.9);text-shadow:0 6px 18px rgba(0,0,0,0.6);animation:fall linear infinite;}
+@keyframes fall{0%{transform:translateY(-110%);}100%{transform:translateY(120%);}}
+.shield{position:absolute;right:16px;top:16px;width:100px;height:100px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#0e2f3b,#042a19);border:1px solid rgba(255,255,255,0.03);box-shadow:0 10px 30px rgba(0,0,0,0.6);animation:float 4s ease-in-out infinite;}
+@keyframes float{50%{transform:translateY(-8px);}}
+.demo-gift{position:absolute;top:10px;right:10px;padding:4px;z-index:3;}
+#liveGraph{position:absolute;bottom:8px;left:8px;right:8px;height:8px;background:rgba(255,255,255,0.05);border-radius:4px;overflow:hidden;}
+#graphBar{height:100%;width:0%;background:linear-gradient(90deg,#36d399,#2bc1a0);transition:width 0.3s;}
+form{display:flex;flex-direction:column;gap:12px;background:var(--card);padding:20px;border-radius:12px;border:1px solid var(--glass-border);}
+form input,form textarea{background:rgba(255,255,255,0.02);border:1px solid var(--glass-border);padding:10px;color:#fff;border-radius:8px;}
+form button{background:var(--accent);color:#032129;font-weight:700;padding:10px;border-radius:8px;border:none;cursor:pointer;transition:all .2s;}
+form button:hover{transform:scale(1.05);}
+.checkbox-group{display:flex;gap:12px;flex-wrap:wrap;align-items:center;color:var(--muted);}
+.interactive-checkboxes{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  gap:12px;
+  margin-top:12px;
+}
+.domain-card{
+  padding:14px;
+  border-radius:12px;
+  text-align:center;
+  cursor:pointer;
+  background:var(--card);
+  border:1px solid var(--glass-border);
+  transition:all 0.3s ease;
+  color:var(--muted);
+  font-weight:600;
+  user-select:none;
+}
+.domain-card:hover{transform:scale(1.05);border-color:var(--accent);}
+.domain-card.selected{
+  background:var(--accent);
+  color:#032129;
+  box-shadow:0 0 15px rgba(54,211,153,0.6);
+  border-color:var(--accent);
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="brand">
+      <div class="logo">T</div>
+      <div><h1>Trinity Tech</h1></div>
+    </div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#careers">Careers</a>
+      <a href="#contact">Contact</a>
+      <a href="#hero" class="cta">Get Started</a>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <h2 class="section-title">About Us</h2>
+  <p>Trinity Tech Solutions Pvt Ltd focuses on securing applications, networks, and cloud infrastructures. We combine web & mobile development expertise with top-tier offensive & defensive security, DevOps, DevSecOps, and cloud security. Our mission is to deliver secure, scalable, and reliable solutions to enterprises globally.</p>
+</section>
+
+<section id="services">
+  <h2 class="section-title">Our Services</h2>
+  <div class="grid services-grid">
+    <div class="card"><h3>Web & Mobile Development</h3><p>Full-stack web, Android & iOS apps with robust security integration.</p></div>
+    <div class="card"><h3>Offensive Security</h3><p>Pentester, Red Team, Ethical Hacking</p></div>
+    <div class="card"><h3>Defensive Security</h3><p>SOC Engineer, SOC Analyst</p></div>
+    <div class="card"><h3>Network Security</h3><p>CCIE Experts, Network Hardening</p></div>
+    <div class="card"><h3>DevOps & DevSecOps</h3><p>CI/CD pipelines, Kubernetes, Docker, GitOps, Security Automation</p></div>
+    <div class="card"><h3>Cloud Security</h3><p>AWS, Azure, GCP Security, Cloud Hardening & Monitoring</p></div>
+  </div>
+</section>
+
+<section id="careers">
+  <h2 class="section-title">Careers at Trinity Tech</h2>
+  <div class="grid services-grid">
+    <div class="card"><h3>Junior DevOps Engineer</h3><p>Work on CI/CD pipelines, Kubernetes, and security automation.</p></div>
+    <div class="card"><h3>SOC Analyst</h3><p>Monitor and respond to security incidents in real-time.</p></div>
+    <div class="card"><h3>Red Team Engineer</h3><p>Conduct penetration tests and simulate advanced attacks.</p></div>
+    <div class="card"><h3>Cloud Security Engineer</h3><p>Secure cloud environments across AWS, Azure, GCP.</p></div>
+  </div>
+</section>
+
+<section id="hero" class="hero">
+  <div class="hero-left">
+    <h1 class="title">Secure Your Web, Mobile & Cloud Apps</h1>
+    <p class="lead">End-to-end services in Web, Mobile, Offensive Security, Defensive Security, Network Security, DevOps & DevSecOps, Cloud Security.</p>
+    <div class="features">
+      <span class="pill">Web Development</span>
+      <span class="pill">Android & iOS</span>
+      <span class="pill">Offensive Security</span>
+      <span class="pill">Defensive Security</span>
+      <span class="pill">Network Security</span>
+      <span class="pill">DevOps</span>
+      <span class="pill">DevSecOps</span>
+      <span class="pill">Cloud Security</span>
+    </div>
+  </div>
+  <div class="hero-right panel">
+    <div class="demo-gift">
+      <!-- Animated SVG graph -->
+      <svg width="60" height="40" viewBox="0 0 60 40">
+        <polyline fill="none" stroke="#36d399" stroke-width="3" points="0,30 10,10 20,25 30,5 40,20 50,10 60,25">
+          <animate attributeName="points" dur="4s" repeatCount="indefinite"
+          values="0,30 10,10 20,25 30,5 40,20 50,10 60,25;
+                  0,20 10,15 20,20 30,10 40,25 50,5 60,30;
+                  0,30 10,10 20,25 30,5 40,20 50,10 60,25"/>
+        </polyline>
+      </svg>
+    </div>
+    <div id="three-container"></div>
+    <div class="code-window" id="code-window">
+      <div class="code-stream" id="code-stream"></div>
+      <div class="shield" title="DevSecOps Shield"></div>
+      <div id="liveGraph"><div id="graphBar"></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2 class="section-title">Contact & Domains of Interest</h2>
+  <form>
+    <input type="text" placeholder="Name" required>
+    <input type="email" placeholder="Email" required>
+    <textarea placeholder="Your Message / Feedback" rows="4"></textarea>
+
+    <h3 style="color:var(--accent);margin-top:20px;">I'm Interested In:</h3>
+    <div class="interactive-checkboxes">
+      <div class="domain-card" data-value="Web Development">Web Development</div>
+      <div class="domain-card" data-value="Android & iOS">Android & iOS</div>
+      <div class="domain-card" data-value="Offensive Security">Offensive Security</div>
+      <div class="domain-card" data-value="Defensive Security">Defensive Security</div>
+      <div class="domain-card" data-value="Network Security">Network Security</div>
+      <div class="domain-card" data-value="DevOps">DevOps</div>
+      <div class="domain-card" data-value="DevSecOps">DevSecOps</div>
+      <div class="domain-card" data-value="Cloud Security">Cloud Security</div>
+    </div>
+
+    <input type="hidden" name="interests" id="selectedDomains">
+    <button type="submit">Submit</button>
+  </form>
+</section>
+
+<script>
+// Smooth active link highlight
+const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll',()=>{
+  let current='';
+  sections.forEach(sec=>{
+    const top = window.scrollY;
+    if(top >= sec.offsetTop-80) current=sec.getAttribute('id');
+  });
+  navLinks.forEach(link=>{
+    link.classList.remove('active');
+    if(link.getAttribute('href').includes(current)) link.classList.add('active');
+  });
+});
+
+// Code rain
+const codeStream = document.getElementById('code-stream');
+const chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789<>/{}[]$@#%&()*^';
+for(let i=0;i<50;i++){
+  const col = document.createElement('div');
+  col.className='column';
+  col.style.left=`${i*16}px`;
+  col.dataset.len=Math.floor(Math.random()*10+8);
+  codeStream.appendChild(col);
+}
+function animateColumns(){
+  document.querySelectorAll('.column').forEach(col=>{
+    let str='';
+    for(let i=0;i<col.dataset.len;i++) str+=chars.charAt(Math.floor(Math.random()*chars.length));
+    col.innerText=str;
+    col.style.animationDuration=`${Math.random()*5+5}s`;
+  });
+}
+setInterval(animateColumns,200);
+
+// Live progress graph
+let width=0;
+function animateGraph(){
+  width=Math.random()*100;
+  document.getElementById('graphBar').style.width=width+'%';
+}
+setInterval(animateGraph,1200);
+
+// Three.js 3D sphere
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75,1,0.1,1000);
+const renderer = new THREE.WebGLRenderer({alpha:true});
+renderer.setSize(420,420);
+document.getElementById('three-container').appendChild(renderer.domElement);
+const geometry = new THREE.SphereGeometry(1.5,32,32);
+const material = new THREE.MeshStandardMaterial({color:0x36d399, wireframe:true});
+const sphere = new THREE.Mesh(geometry, material);
+scene.add(sphere);
+const light = new THREE.DirectionalLight(0xffffff,1);
+light.position.set(5,5,5);
+scene.add(light);
+camera.position.z=5;
+function animate(){
+  requestAnimationFrame(animate);
+  sphere.rotation.y+=0.004;
+  sphere.rotation.x+=0.002;
+  renderer.render(scene,camera);
+}
+animate();
+
+// Interactive domain cards
+const cards = document.querySelectorAll('.domain-card');
+const hiddenInput = document.getElementById('selectedDomains');
+cards.forEach(card=>{
+  card.addEventListener('click',()=>{
+    card.classList.toggle('selected');
+    const selected = Array.from(cards)
+                          .filter(c=>c.classList.contains('selected'))
+                          .map(c=>c.dataset.value);
+    hiddenInput.value = selected.join(',');
+  });
+});
+</script>
+
+</body>
+</html>
