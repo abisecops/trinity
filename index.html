@@ -78,6 +78,12 @@ form button:hover{transform:scale(1.05);}
   box-shadow:0 0 15px rgba(54,211,153,0.6);
   border-color:var(--accent);
 }
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;}
+  .hero-right.panel{height:300px;}
+  .title{font-size:28px;}
+  .pill{font-size:12px;padding:8px;}
+}
 </style>
 </head>
 <body>
@@ -142,7 +148,6 @@ form button:hover{transform:scale(1.05);}
   </div>
   <div class="hero-right panel">
     <div class="demo-gift">
-      <!-- Animated SVG graph -->
       <svg width="60" height="40" viewBox="0 0 60 40">
         <polyline fill="none" stroke="#36d399" stroke-width="3" points="0,30 10,10 20,25 30,5 40,20 50,10 60,25">
           <animate attributeName="points" dur="4s" repeatCount="indefinite"
@@ -163,7 +168,7 @@ form button:hover{transform:scale(1.05);}
 
 <section id="contact">
   <h2 class="section-title">Contact & Domains of Interest</h2>
-  <form>
+  <form id="contactForm">
     <input type="text" placeholder="Name" required>
     <input type="email" placeholder="Email" required>
     <textarea placeholder="Your Message / Feedback" rows="4"></textarea>
@@ -179,10 +184,20 @@ form button:hover{transform:scale(1.05);}
       <div class="domain-card" data-value="DevSecOps">DevSecOps</div>
       <div class="domain-card" data-value="Cloud Security">Cloud Security</div>
     </div>
-
+    <p id="selectedCount" style="color:var(--accent);margin-top:8px;">No domains selected</p>
     <input type="hidden" name="interests" id="selectedDomains">
     <button type="submit">Submit</button>
   </form>
+
+  <section id="reviews" style="margin-top:40px;">
+    <h2 class="section-title">What People Say</h2>
+    <div class="grid services-grid">
+      <div class="card"><h3>John Doe</h3><p>"Trinity Tech made our cloud secure and fast. Amazing DevOps practices!"</p></div>
+      <div class="card"><h3>Jane Smith</h3><p>"The team handled our app security like pros. Highly recommend!"</p></div>
+      <div class="card"><h3>Ravi Kumar</h3><p>"Excellent support and DevSecOps implementation. Very satisfied."</p></div>
+      <div class="card"><h3>Priya Singh</h3><p>"Our network is now fully hardened. Trinity Tech is top-notch."</p></div>
+    </div>
+  </section>
 </section>
 
 <script>
@@ -251,17 +266,32 @@ function animate(){
 }
 animate();
 
-// Interactive domain cards
+// Domain card toggle with selection count
 const cards = document.querySelectorAll('.domain-card');
 const hiddenInput = document.getElementById('selectedDomains');
-cards.forEach(card=>{
-  card.addEventListener('click',()=>{
+const selectedCount = document.getElementById('selectedCount');
+
+function updateSelection() {
+  const selected = Array.from(cards)
+                        .filter(c => c.classList.contains('selected'))
+                        .map(c => c.dataset.value);
+  hiddenInput.value = selected.join(',');
+  if(selected.length === 0) selectedCount.innerText = "No domains selected";
+  else if(selected.length === 1) selectedCount.innerText = "1 domain selected: " + selected.join(', ');
+  else selectedCount.innerText = selected.length + " domains selected: " + selected.join(', ');
+}
+
+cards.forEach(card => {
+  card.addEventListener('click', () => {
     card.classList.toggle('selected');
-    const selected = Array.from(cards)
-                          .filter(c=>c.classList.contains('selected'))
-                          .map(c=>c.dataset.value);
-    hiddenInput.value = selected.join(',');
+    updateSelection();
   });
+});
+
+// Form submission (example)
+document.getElementById('contactForm').addEventListener('submit', (e) => {
+  e.preventDefault(); // Remove this line for actual form submission
+  alert("Form submitted with domains: " + hiddenInput.value);
 });
 </script>
 
