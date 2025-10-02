@@ -1,4 +1,4 @@
-   <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -12,13 +12,13 @@
 
 <style>
 :root{
-  --bg:#020a16; /* Deeper background */
-  --card:#0a172a; /* Slightly lighter card background */
+  --bg:#020a16; /* Deepest background */
+  --card:#0a172a; /* Card background */
   --muted:#adbad0; /* Softened gray */
   --accent:#36d399; /* Primary green accent */
   --glass: rgba(255,255,255,0.03); 
-  --glass-2: rgba(255,255,255,0.02); 
-  --glass-border: rgba(255,255,255,0.06); /* Stronger border for definition */
+  --glass-2: rgba(255,255,255,0.01); /* Reduced glass effect */
+  --glass-border: rgba(255,255,255,0.03); /* Thinner border for definition */
   --maxw:1200px;
 }
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -26,10 +26,10 @@ body{font-family:'Inter', system-ui;background:var(--bg);color:#f0f4f8;line-heig
 a{text-decoration:none;color:var(--accent);}
 
 /* --- Header & Navigation --- */
-header{position:sticky;top:0;background:rgba(2,10,22,0.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--glass-border);z-index:50;box-shadow:0 2px 10px rgba(0,0,0,0.4);}
+header{position:sticky;top:0;background:rgba(2,10,22,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--glass-border);z-index:50;box-shadow:0 2px 12px rgba(0,0,0,0.5);}
 .nav{max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:16px 24px;}
 .brand{display:flex;align-items:center;gap:12px;font-size:20px;font-weight:700;}
-.logo{width:36px;height:36px;border-radius:6px;background:linear-gradient(135deg,#0a172a,#1f5344);display:flex;justify-content:center;align-items:center;color:var(--accent);font-weight:900;font-size:18px;box-shadow:0 0 10px rgba(54,211,153,0.3);}
+.logo{width:36px;height:36px;border-radius:6px;background:linear-gradient(135deg,#0a172a,#1f5344);display:flex;justify-content:center;align-items:center;color:var(--accent);font-weight:900;font-size:18px;box-shadow:0 0 8px rgba(54,211,153,0.3);}
 .nav-links{display:flex;gap:20px;align-items:center;}
 .nav-links a{color:var(--muted);font-weight:600;padding:8px 12px;border-radius:6px;transition:all .2s;}
 .nav-links a:hover{background:var(--glass-2);color:#fff;}
@@ -73,20 +73,18 @@ h2.section-title::after{content:'';width:80px;height:4px;background:var(--accent
 .hero-cta-main{font-size:18px;padding:14px 24px !important;}
 .pill-container{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px;}
 .pill{background:rgba(54,211,153,0.15);padding:10px 16px;border-radius:20px;font-weight:600;font-size:14px;color:var(--accent);border:1px solid rgba(54,211,153,0.3);}
-.hero-right.panel{height:500px;border-radius:20px;border:1px solid var(--glass-border);position:relative;overflow:hidden;background:linear-gradient(180deg, rgba(0,0,0,0.2), rgba(255,255,255,0.05));}
+.hero-right.panel{height:500px;border-radius:20px;border:1px solid var(--glass-border);position:relative;overflow:hidden;background:linear-gradient(180deg, rgba(0,0,0,0.3), rgba(0,0,0,0.1));} /* Ensure no white/light background */
 
 /* --- Dynamic Visuals (Code Rain & Three.js) --- */
 #three-container{position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;opacity:0.8;}
-/* Note: The Three.js sphere/network should be highly refined here using TypeScript/D3 integration */
-.code-window{position:absolute;z-index:2;bottom:10%;left:8%;right:8%;height:200px;background:rgba(0,0,0,0.7);border:1px solid rgba(54,211,153,0.2);border-radius:16px;padding:16px;overflow:hidden;box-shadow:0 0 30px rgba(0,0,0,0.9);}
-.shield{background:linear-gradient(135deg, #1f5344, var(--accent));box-shadow:0 0 15px var(--accent);font-size:24px;} /* Enhanced shield style */
+.code-window{position:absolute;z-index:2;bottom:10%;left:8%;right:8%;height:200px;background:rgba(0,0,0,0.8);border:1px solid rgba(54,211,153,0.2);border-radius:16px;padding:16px;overflow:hidden;box-shadow:0 0 30px rgba(0,0,0,0.9);}
+.shield{background:linear-gradient(135deg, #1f5344, var(--accent));box-shadow:0 0 15px var(--accent);font-size:24px;} 
 
 /* --- Contact Form & Footer (Professionalism) --- */
 .contact-link-style{font-weight:700;}
 .sales-link{color: #020a16 !important;}
 
 footer {background:var(--card);border-top:1px solid var(--glass-border);padding:50px 24px 30px;margin-top:100px;}
-.footer-section h3 {font-weight:700;}
 
 /* --- Media Queries (Responsiveness) --- */
 @media(max-width:1000px){
@@ -124,25 +122,27 @@ footer {background:var(--card);border-top:1px solid var(--glass-border);padding:
 <section id="hero" class="hero">
   <div class="hero-left">
     <h1 class="title">Future-Proof Your Enterprise: DevSecOps & Cloud Security</h1>
-    <p class="lead">We deliver **secure, scalable, and resilient** digital transformation. From hardening your network to automating security in CI/CD pipelines, we ensure compliance and operational excellence.</p>
+    <p class="lead">We deliver *secure, scalable, and resilient* digital transformation. From hardening your network to automating security in CI/CD pipelines, we ensure compliance and operational excellence.</p>
     <a href="#contact" class="cta hero-cta-main">Request Your Security Roadmap</a>
     <div class="pill-container">
       <span class="pill">Security Automation</span>
       <span class="pill">Cloud Compliance (AWS, Azure, GCP)</span>
       <span class="pill">Full-Stack Development</span>
     </div>
+    <div style="margin-top: 30px; font-style: italic; color: var(--accent); font-weight: 600;">#NoBuzzzwords. Pure Expertise.</div>
   </div>
   <div class="hero-right panel">
     <div id="three-container"></div>
     <div class="code-window" id="code-window">
       <div class="code-stream" id="code-stream"></div>
-      <div class="shield">TS</div>     </div>
+      <div class="shield">TS</div>
+    </div>
   </div>
 </section>
 
 <section id="about">
   <h2 class="section-title">Our Mission & Expertise</h2>
-  <p style="font-size:18px; color:#d8eaf0; margin-bottom:30px; font-weight:500;">We are the confluence of Development and Security. Trinity Tech is a specialized partner focused on accelerating your business while embedding **uncompromised security** into every layer of your application, cloud, and network infrastructure.</p>
+  <p style="font-size:18px; color:#d8eaf0; margin-bottom:30px; font-weight:500;">We are the confluence of Development and Security. Trinity Tech is a specialized partner focused on accelerating your business while embedding *uncompromised security* into every layer of your application, cloud, and network infrastructure.</p>
   
     <h3 style="color:var(--muted); font-size:16px; margin-top:50px; text-align:center; font-weight:500;">Trusted by leading innovators in FinTech, Healthcare, and SaaS.</h3>
   <div style="display:flex; justify-content:center; gap:50px; opacity:0.25; margin-top:20px; flex-wrap:wrap; filter:grayscale(100%);">
@@ -155,7 +155,7 @@ footer {background:var(--card);border-top:1px solid var(--glass-border);padding:
 <section id="services">
   <h2 class="section-title">Our Core Service Offerings</h2>
   <div class="grid services-grid">
-    <div class="card"><h3>DevOps & DevSecOps</h3><p>CI/CD pipelines, Kubernetes, Docker, GitOps, **Security Automation** and infrastructure-as-code deployment.</p></div>
+    <div class="card"><h3>DevOps & DevSecOps</h3><p>CI/CD pipelines, Kubernetes, Docker, GitOps, *Security Automation* and infrastructure-as-code deployment.</p></div>
     <div class="card"><h3>Cloud Security & Hardening</h3><p>Specialized security, compliance, and monitoring for AWS, Azure, and GCP environments.</p></div>
     <div class="card"><h3>Offensive Security</h3><p>Advanced Penetration Testing, Red Team exercises, and vulnerability research.</p></div>
     <div class="card"><h3>Defensive Security & SOC</h3><p>Real-time threat monitoring, SOC setup, incident response, and security operations.</p></div>
@@ -165,10 +165,20 @@ footer {background:var(--card);border-top:1px solid var(--glass-border);padding:
 <section id="reviews">
   <h2 class="section-title">Client Success Stories</h2>
   <div class="grid services-grid">
-    <div class="card"><h3>"Exceeded Expectations"</h3><p>"Trinity Tech made our cloud secure and fast. Their DevSecOps practices cut our deployment time by 40%." **— John D., CTO**</p></div>
-    <div class="card"><h3>"True Security Partner"</h3><p>"The team handled our network security audit and hardening like pros. We finally have peace of mind." **— Jane S., CISO**</p></div>
-    <div class="card"><h3>"Seamless Integration"</h3><p>"Excellent support and DevSecOps implementation. The integration with our existing CI/CD was flawless." **— Ravi K., Lead Architect**</p></div>
-    <div class="card"><h3>"Top-Tier Expertise"</h3><p>"Our Red Team assessment was highly detailed and actionable. Trinity Tech is top-notch in offensive security." **— Priya S., Security Manager**</p></div>
+    <div class="card"><h3>"Exceeded Expectations"</h3><p>"Trinity Tech made our cloud secure and fast. Their DevSecOps practices cut our deployment time by 40%." — *John D., CTO*</p></div>
+    <div class="card"><h3>"True Security Partner"</h3><p>"The team handled our network security audit and hardening like pros. We finally have peace of mind." — *Jane S., CISO*</p></div>
+    <div class="card"><h3>"Seamless Integration"</h3><p>"Excellent support and DevSecOps implementation. The integration with our existing CI/CD was flawless." — *Ravi K., Lead Architect*</p></div>
+    <div class="card"><h3>"Top-Tier Expertise"</h3><p>"Our Red Team assessment was highly detailed and actionable. Trinity Tech is top-notch in offensive security." — *Priya S., Security Manager*</p></div>
+  </div>
+</section>
+
+<section id="careers">
+  <h2 class="section-title">Careers: Join Our Team</h2>
+  <div class="grid services-grid">
+    <div class="card"><h3>Senior DevSecOps Architect</h3><p>Lead the design of secure CI/CD pipelines and infrastructure.</p></div>
+    <div class="card"><h3>Cloud Security Engineer (AWS/GCP)</h3><p>Implement and monitor security controls in hyperscale cloud environments.</p></div>
+    <div class="card"><h3>Red Team Engineer</h3><p>Conduct advanced penetration tests and adversarial simulation.</p></div>
+    <div class="card"><h3>SOC Analyst (L2/L3)</h3><p>Monitor, investigate, and respond to critical security incidents.</p></div>
   </div>
 </section>
 
@@ -177,7 +187,7 @@ footer {background:var(--card);border-top:1px solid var(--glass-border);padding:
   <p style="margin-bottom: 35px; color: var(--muted); text-align:center; font-size:18px;">For sales, technical questions, or direct connection, use the form or our professional email addresses:</p>
   <div class="contact-links">
     <a href="mailto:pingabisec@gmail.com?subject=Sales%20Inquiry%20from%20Website" class="contact-link-style sales-link cta">sales@trinitytechq.com</a>
-    <a href="mailto:pingabisec@gmail.com?subject=General%20Contact%20from%20Website" class="contact-link-style contact-link cta" style="background:var(--card); border:1px solid var(--glass-border);">contact@trinitytechq.com</a>
+    <a href="mailto:pingabisec@gmail.com?subject=General%20Contact%20from%20Website" class="contact-link-style contact-link cta" style="background:var(--card); border:1px solid var(--glass-border); color:var(--muted) !important; box-shadow:none;">contact@trinitytechq.com</a>
     <a href="mailto:pingabisec@gmail.com?subject=Ping%20from%20Website" class="contact-link-style ping-link cta" style="background:#007bff; color:white!important;">ping@trinitytechq.com</a>
   </div>
   
@@ -262,15 +272,7 @@ animateColumns();
 setInterval(animateColumns,300);
 
 
-// --- 3D.js Network Visualization (The "Impressive" Element) ---
-
-// NOTE: FOR A TRULY IMPRESSIVE LOOK, THIS SHOULD BE REPLACED WITH A 
-// **CUSTOM-CODED THREE.JS OR D3.JS NETWORK GRAPH** USING TYPESCRIPT.
-// The code below is the basic placeholder. The professional version would use:
-// 1. **Particle System:** Thousands of subtle, glowing particles.
-// 2. **Connecting Lines:** Lines drawn between random nodes, representing data flow.
-// 3. **Dynamic Path Tracing:** A subtle, animated glow that traces a random path through the network.
-
+// --- 3D.js Network Visualization (Subtle Background) ---
 const threeContainer = document.getElementById('three-container');
 const panelWidth = threeContainer.clientWidth;
 const panelHeight = threeContainer.clientHeight;
@@ -281,7 +283,6 @@ const renderer = new THREE.WebGLRenderer({alpha: true});
 renderer.setSize(panelWidth, panelHeight);
 threeContainer.appendChild(renderer.domElement);
 
-// Creating a subtle, low-opacity mesh for background
 const geometry = new THREE.IcosahedronGeometry(1.5, 1);
 const material = new THREE.MeshBasicMaterial({color: 0x36d399, wireframe: true, transparent: true, opacity: 0.1}); 
 
@@ -332,4 +333,4 @@ document.getElementById('contactForm').addEventListener('submit', (e) => {
 </script>
 
 </body>
-</html> 
+</html>
