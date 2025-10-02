@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -7,330 +7,282 @@
 <meta name="description" content="Trinity Tech Solutions: Your expert partner for DevSecOps, Cloud Security, and advanced security automation. Secure your AWS, Azure, and mobile apps with our top-tier specialists.">
 <meta name="keywords" content="DevSecOps, Cloud Security, AWS Security, Network Hardening, Penetration Testing, CI/CD Security, Trinity Tech Solutions">
 <link rel="canonical" href="https://trinitytechq.com/">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r152/three.min.js"></script>
 
 <style>
-:root{
-  --bg:#020a16; /* Deepest background */
-  --card:#0a172a; /* Card background */
-  --muted:#adbad0; /* Softened gray */
-  --accent:#36d399; /* Primary green accent */
-  --glass: rgba(255,255,255,0.03); 
-  --glass-2: rgba(255,255,255,0.01); /* Reduced glass effect */
-  --glass-border: rgba(255,255,255,0.03); /* Thinner border for definition */
-  --maxw:1200px;
+:root {
+  --bg: #020a16;
+  --card: #0a172a;
+  --muted: #adbad0;
+  --accent: #36d399;
+  --glass: rgba(255,255,255,0.03);
+  --glass-border: rgba(255,255,255,0.07);
+  --maxw: 1200px;
 }
 *{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'Inter', system-ui;background:var(--bg);color:#f0f4f8;line-height:1.6;scroll-behavior:smooth;font-weight:400;}
-a{text-decoration:none;color:var(--accent);}
-
-/* --- Header & Navigation --- */
-header{position:sticky;top:0;background:rgba(2,10,22,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--glass-border);z-index:50;box-shadow:0 2px 12px rgba(0,0,0,0.5);}
-.nav{max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:16px 24px;}
-.brand{display:flex;align-items:center;gap:12px;font-size:20px;font-weight:700;}
-.logo{width:36px;height:36px;border-radius:6px;background:linear-gradient(135deg,#0a172a,#1f5344);display:flex;justify-content:center;align-items:center;color:var(--accent);font-weight:900;font-size:18px;box-shadow:0 0 8px rgba(54,211,153,0.3);}
-.nav-links{display:flex;gap:20px;align-items:center;}
-.nav-links a{color:var(--muted);font-weight:600;padding:8px 12px;border-radius:6px;transition:all .2s;}
-.nav-links a:hover{background:var(--glass-2);color:#fff;}
-.nav-links a.active{color:var(--accent);border-bottom:3px solid var(--accent);padding-bottom:5px;}
-.cta{
-  background:linear-gradient(90deg,var(--accent),#2bd9a3);
-  color:#020a16 !important; 
-  padding:10px 18px;
-  border-radius:8px;
-  font-weight:800;
-  cursor:pointer;
-  transition:all .3s ease;
-  box-shadow:0 4px 15px rgba(54,211,153,0.4);
+body {
+  font-family: 'Inter', system-ui;
+  background: var(--bg);
+  color: #f0f4f8;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  font-weight: 400;
 }
-.cta:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 8px 20px rgba(54,211,153,0.6);}
+a{text-decoration:none;color:var(--accent);}
+img{max-width:100%;height:auto;}
 
-/* --- General Structure & Sections --- */
-section{max-width:var(--maxw);margin:100px auto;padding:0 24px;}
-h2.section-title{font-size:36px;color:#fff;margin-bottom:35px;position:relative;font-weight:800;}
-h2.section-title::after{content:'';width:80px;height:4px;background:var(--accent);position:absolute;left:0;bottom:-15px;border-radius:2px;}
+/* Header */
+header {
+  position: sticky;
+  top: 0;
+  background: rgba(2,10,22,0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--glass-border);
+  z-index: 100;
+}
+.nav {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+}
+.brand {display:flex;align-items:center;gap:12px;font-weight:700;}
+.logo {
+  width: 40px; height: 40px;
+  border-radius: 8px;
+  background: linear-gradient(135deg,#0a172a,#1f5344);
+  display:flex;align-items:center;justify-content:center;
+  font-weight:900;font-size:18px;color:var(--accent);
+  box-shadow:0 0 8px rgba(54,211,153,0.4);
+}
+.nav-links {display:flex;gap:20px;align-items:center;}
+.nav-links a {
+  color: var(--muted); font-weight:600;
+  padding:8px 12px;border-radius:6px;transition:.2s;
+}
+.nav-links a:hover{background:var(--glass);color:#fff;}
+.nav-links a.active{color:var(--accent);border-bottom:2px solid var(--accent);}
+.cta {
+  background: linear-gradient(90deg,var(--accent),#2bd9a3);
+  color:#020a16 !important;
+  padding:10px 18px;
+  border-radius:8px;
+  font-weight:800;
+  box-shadow:0 4px 15px rgba(54,211,153,0.4);
+  transition:.3s ease;
+}
+.cta:hover{transform:translateY(-2px) scale(1.02);}
+
+/* Sections */
+section {max-width:var(--maxw);margin:100px auto;padding:0 24px;}
+h2.section-title {
+  font-size:32px;color:#fff;margin-bottom:35px;
+  font-weight:800;text-align:center;position:relative;
+}
+h2.section-title::after {
+  content:'';width:70px;height:3px;background:var(--accent);
+  position:absolute;left:50%;transform:translateX(-50%);bottom:-15px;
+}
+
+/* Hero */
+.hero {
+  display:grid;grid-template-columns:1fr 480px;gap:50px;align-items:center;
+  margin-top:60px;
+}
+.hero-left {padding:40px;background:var(--card);
+  border-radius:20px;border:1px solid var(--glass-border);}
+.title {
+  font-size:50px;font-weight:900;line-height:1.1;margin-bottom:20px;
+}
+.lead {color:#d8eaf0;font-size:18px;margin-bottom:30px;}
+.pill-container{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px;}
+.pill {
+  background:rgba(54,211,153,0.15);
+  padding:8px 16px;border-radius:20px;font-size:14px;
+  border:1px solid rgba(54,211,153,0.3);color:var(--accent);font-weight:600;
+}
+.hero-right.panel {
+  height:460px;border-radius:20px;border:1px solid var(--glass-border);
+  position:relative;overflow:hidden;
+}
+#three-container{position:absolute;top:0;left:0;width:100%;height:100%;}
+.code-window {
+  position:absolute;bottom:12%;left:8%;right:8%;
+  height:180px;background:rgba(0,0,0,0.8);
+  border:1px solid rgba(54,211,153,0.2);border-radius:16px;
+  padding:16px;box-shadow:0 0 25px rgba(0,0,0,0.9);
+}
+
+/* Cards */
 .grid{display:grid;gap:28px;}
 .services-grid{grid-template-columns:repeat(auto-fit,minmax(280px,1fr));}
-.card{
-  background:var(--card);
-  padding:30px;
-  border-radius:18px;
-  border:1px solid var(--glass-border);
-  transition:all .4s ease;
-  cursor:pointer;
-  box-shadow:inset 0 0 10px rgba(0,0,0,0.5), 0 5px 20px rgba(0,0,0,0.3); 
+.card {
+  background:var(--card);padding:28px;border-radius:16px;
+  border:1px solid var(--glass-border);
+  transition:.3s;box-shadow:0 5px 18px rgba(0,0,0,0.3);
 }
-.card:hover{transform:translateY(-8px);box-shadow:0 18px 40px rgba(0,0,0,0.8);}
-.card h3{margin-bottom:12px;color:#fff;font-size:20px;font-weight:700;}
+.card:hover {transform:translateY(-6px);box-shadow:0 14px 30px rgba(0,0,0,0.6);}
+.card h3{margin-bottom:12px;font-size:18px;font-weight:700;}
 .card p{font-size:15px;color:var(--muted);}
 
-/* --- Hero Section --- */
-.hero{display:grid;grid-template-columns:1fr 500px;gap:50px;align-items:center;margin-top:60px;}
-.hero-left{padding:40px;background:var(--card);border-radius:20px;border:1px solid var(--glass-border);box-shadow:0 0 20px rgba(0,0,0,0.4);}
-.title{font-size:56px;margin:16px 0 20px;color:#fff;line-height:1.1;font-weight:900;}
-.lead{color:#d8eaf0;font-size:20px;margin-bottom:30px;font-weight:300;}
-.hero-cta-main{font-size:18px;padding:14px 24px !important;}
-.pill-container{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px;}
-.pill{background:rgba(54,211,153,0.15);padding:10px 16px;border-radius:20px;font-weight:600;font-size:14px;color:var(--accent);border:1px solid rgba(54,211,153,0.3);}
-.hero-right.panel{height:500px;border-radius:20px;border:1px solid var(--glass-border);position:relative;overflow:hidden;background:linear-gradient(180deg, rgba(0,0,0,0.3), rgba(0,0,0,0.1));} /* Ensure no white/light background */
+/* Form */
+form {
+  display:flex;flex-direction:column;gap:16px;
+  max-width:600px;margin:0 auto;
+}
+form input,form textarea {
+  background:var(--glass);border:1px solid var(--glass-border);
+  border-radius:8px;padding:12px;color:#fff;font-size:15px;
+}
+form input:focus,form textarea:focus {outline:1px solid var(--accent);}
+form button {
+  background:linear-gradient(90deg,var(--accent),#2bd9a3);
+  border:none;padding:14px;border-radius:10px;
+  font-weight:700;color:#020a16;font-size:16px;
+  cursor:pointer;transition:.3s;
+}
+form button:hover{transform:scale(1.02);}
 
-/* --- Dynamic Visuals (Code Rain & Three.js) --- */
-#three-container{position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;opacity:0.8;}
-.code-window{position:absolute;z-index:2;bottom:10%;left:8%;right:8%;height:200px;background:rgba(0,0,0,0.8);border:1px solid rgba(54,211,153,0.2);border-radius:16px;padding:16px;overflow:hidden;box-shadow:0 0 30px rgba(0,0,0,0.9);}
-.shield{background:linear-gradient(135deg, #1f5344, var(--accent));box-shadow:0 0 15px var(--accent);font-size:24px;} 
+/* Footer */
+footer {
+  background:var(--card);border-top:1px solid var(--glass-border);
+  padding:50px 24px 30px;margin-top:100px;
+}
+.footer-content {
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:30px;
+}
+.footer-section h3{margin-bottom:15px;color:#fff;}
+.footer-section a{display:block;margin-bottom:6px;color:var(--muted);transition:.2s;}
+.footer-section a:hover{color:var(--accent);}
+.footer-bottom{text-align:center;margin-top:40px;font-size:14px;color:var(--muted);}
 
-/* --- Contact Form & Footer (Professionalism) --- */
-.contact-link-style{font-weight:700;}
-.sales-link{color: #020a16 !important;}
-
-footer {background:var(--card);border-top:1px solid var(--glass-border);padding:50px 24px 30px;margin-top:100px;}
-
-/* --- Media Queries (Responsiveness) --- */
+/* Responsive */
 @media(max-width:1000px){
-  .hero{grid-template-columns:1fr;}
-  .hero-right.panel{height:380px;}
-  .title{font-size:42px;}
-  h2.section-title{font-size:30px;}
+  .hero{grid-template-columns:1fr;}
+  .hero-right.panel{height:320px;margin-top:20px;}
+  .title{font-size:36px;}
 }
 @media(max-width:600px){
-  .nav-links a:not(.cta){display:none;}
-  .nav-links{gap:10px;}
-  .title{font-size:32px;}
-  .lead{font-size:18px;}
+  .nav-links a:not(.cta){display:none;}
+  .nav{padding:12px 18px;}
+  .title{font-size:28px;}
+  .lead{font-size:16px;}
 }
 </style>
 </head>
 <body>
 
 <header>
-  <div class="nav">
-    <div class="brand">
-      <div class="logo">TT</div>
-      <div><h1>Trinity Tech</h1></div>
-    </div>
-    <div class="nav-links">
-      <a href="#about">Expertise</a>
-      <a href="#services">Services</a>
-      <a href="#careers">Careers</a>
-      <a href="#contact">Contact</a>
-      <a href="#contact" class="cta">Start Assessment</a>
-    </div>
-  </div>
+  <div class="nav">
+    <div class="brand">
+      <div class="logo">TT</div>
+      <h1>Trinity Tech</h1>
+    </div>
+    <div class="nav-links">
+      <a href="#about">Expertise</a>
+      <a href="#services">Services</a>
+      <a href="#careers">Careers</a>
+      <a href="#contact" class="cta">Get Started</a>
+    </div>
+  </div>
 </header>
 
 <section id="hero" class="hero">
-  <div class="hero-left">
-    <h1 class="title">Future-Proof Your Enterprise: DevSecOps & Cloud Security</h1>
-    <p class="lead">We deliver *secure, scalable, and resilient* digital transformation. From hardening your network to automating security in CI/CD pipelines, we ensure compliance and operational excellence.</p>
-    <a href="#contact" class="cta hero-cta-main">Request Your Security Roadmap</a>
-    <div class="pill-container">
-      <span class="pill">Security Automation</span>
-      <span class="pill">Cloud Compliance (AWS, Azure, GCP)</span>
-      <span class="pill">Full-Stack Development</span>
-    </div>
-    <div style="margin-top: 30px; font-style: italic; color: var(--accent); font-weight: 600;">#NoBuzzzwords. Pure Expertise.</div>
-  </div>
-  <div class="hero-right panel">
-    <div id="three-container"></div>
-    <div class="code-window" id="code-window">
-      <div class="code-stream" id="code-stream"></div>
-      <div class="shield">TS</div>
-    </div>
-  </div>
+  <div class="hero-left">
+    <h1 class="title">Secure. Scalable. Reliable.</h1>
+    <p class="lead">Trinity Tech specializes in DevSecOps, Cloud Security, and advanced application defense. We deliver secure, scalable, and resilient digital solutions for global enterprises.</p>
+    <a href="#contact" class="cta">Request a Security Roadmap</a>
+    <div class="pill-container">
+      <span class="pill">DevSecOps</span>
+      <span class="pill">Cloud Security</span>
+      <span class="pill">CI/CD Automation</span>
+    </div>
+  </div>
+  <div class="hero-right panel">
+    <div id="three-container"></div>
+    <div class="code-window"> <span style="color:var(--accent)">[ Security Simulation Running... ]</span></div>
+  </div>
 </section>
 
 <section id="about">
-  <h2 class="section-title">Our Mission & Expertise</h2>
-  <p style="font-size:18px; color:#d8eaf0; margin-bottom:30px; font-weight:500;">We are the confluence of Development and Security. Trinity Tech is a specialized partner focused on accelerating your business while embedding *uncompromised security* into every layer of your application, cloud, and network infrastructure.</p>
-  
-    <h3 style="color:var(--muted); font-size:16px; margin-top:50px; text-align:center; font-weight:500;">Trusted by leading innovators in FinTech, Healthcare, and SaaS.</h3>
-  <div style="display:flex; justify-content:center; gap:50px; opacity:0.25; margin-top:20px; flex-wrap:wrap; filter:grayscale(100%);">
-    <svg width="90" height="40" viewBox="0 0 80 40" style="fill:#fff;"><text x="0" y="30" font-family="Inter" font-size="22" font-weight="800">FINTECH</text></svg>
-    <svg width="90" height="40" viewBox="0 0 80 40" style="fill:#fff;"><text x="0" y="30" font-family="Inter" font-size="22" font-weight="800">HEALTH</text></svg>
-    <svg width="90" height="40" viewBox="0 0 80 40" style="fill:#fff;"><text x="0" y="30" font-family="Inter" font-size="22" font-weight="800">SAAS</text></svg>
-  </div>
+  <h2 class="section-title">Our Mission & Expertise</h2>
+  <p style="text-align:center;max-width:800px;margin:0 auto;color:#d8eaf0;">We are the confluence of Development, Security, and Cloud. Trinity Tech accelerates your business while embedding uncompromised security into every layer of your apps, networks, and infrastructure.</p>
 </section>
 
 <section id="services">
-  <h2 class="section-title">Our Core Service Offerings</h2>
-  <div class="grid services-grid">
-    <div class="card"><h3>DevOps & DevSecOps</h3><p>CI/CD pipelines, Kubernetes, Docker, GitOps, *Security Automation* and infrastructure-as-code deployment.</p></div>
-    <div class="card"><h3>Cloud Security & Hardening</h3><p>Specialized security, compliance, and monitoring for AWS, Azure, and GCP environments.</p></div>
-    <div class="card"><h3>Offensive Security</h3><p>Advanced Penetration Testing, Red Team exercises, and vulnerability research.</p></div>
-    <div class="card"><h3>Defensive Security & SOC</h3><p>Real-time threat monitoring, SOC setup, incident response, and security operations.</p></div>
-  </div>
-</section>
-
-<section id="reviews">
-  <h2 class="section-title">Client Success Stories</h2>
-  <div class="grid services-grid">
-    <div class="card"><h3>"Exceeded Expectations"</h3><p>"Trinity Tech made our cloud secure and fast. Their DevSecOps practices cut our deployment time by 40%." — *John D., CTO*</p></div>
-    <div class="card"><h3>"True Security Partner"</h3><p>"The team handled our network security audit and hardening like pros. We finally have peace of mind." — *Jane S., CISO*</p></div>
-    <div class="card"><h3>"Seamless Integration"</h3><p>"Excellent support and DevSecOps implementation. The integration with our existing CI/CD was flawless." — *Ravi K., Lead Architect*</p></div>
-    <div class="card"><h3>"Top-Tier Expertise"</h3><p>"Our Red Team assessment was highly detailed and actionable. Trinity Tech is top-notch in offensive security." — *Priya S., Security Manager*</p></div>
-  </div>
-</section>
-
-<section id="careers">
-  <h2 class="section-title">Careers: Join Our Team</h2>
-  <div class="grid services-grid">
-    <div class="card"><h3>Senior DevSecOps Architect</h3><p>Lead the design of secure CI/CD pipelines and infrastructure.</p></div>
-    <div class="card"><h3>Cloud Security Engineer (AWS/GCP)</h3><p>Implement and monitor security controls in hyperscale cloud environments.</p></div>
-    <div class="card"><h3>Red Team Engineer</h3><p>Conduct advanced penetration tests and adversarial simulation.</p></div>
-    <div class="card"><h3>SOC Analyst (L2/L3)</h3><p>Monitor, investigate, and respond to critical security incidents.</p></div>
-  </div>
+  <h2 class="section-title">Our Core Service Offerings</h2>
+  <div class="grid services-grid">
+    <div class="card"><h3>DevSecOps</h3><p>Secure CI/CD, Kubernetes, Docker, and GitOps pipelines with automated compliance.</p></div>
+    <div class="card"><h3>Cloud Security</h3><p>Security and hardening for AWS, Azure, and GCP including compliance audits.</p></div>
+    <div class="card"><h3>Offensive Security</h3><p>Advanced penetration testing, Red Team simulations, and vulnerability assessments.</p></div>
+    <div class="card"><h3>Defensive Security</h3><p>Threat monitoring, SOC setup, and incident response for enterprise-grade defense.</p></div>
+  </div>
 </section>
 
 <section id="contact">
-  <h2 class="section-title">Connect With Us</h2>
-  <p style="margin-bottom: 35px; color: var(--muted); text-align:center; font-size:18px;">For sales, technical questions, or direct connection, use the form or our professional email addresses:</p>
-  <div class="contact-links">
-    <a href="mailto:pingabisec@gmail.com?subject=Sales%20Inquiry%20from%20Website" class="contact-link-style sales-link cta">sales@trinitytechq.com</a>
-    <a href="mailto:pingabisec@gmail.com?subject=General%20Contact%20from%20Website" class="contact-link-style contact-link cta" style="background:var(--card); border:1px solid var(--glass-border); color:var(--muted) !important; box-shadow:none;">contact@trinitytechq.com</a>
-    <a href="mailto:pingabisec@gmail.com?subject=Ping%20from%20Website" class="contact-link-style ping-link cta" style="background:#007bff; color:white!important;">ping@trinitytechq.com</a>
-  </div>
-  
-  <form id="contactForm">
-    <h3 style="color:#e6fbf5;">Start Your Inquiry</h3>
-    <input type="text" placeholder="Your Name" required>
-    <input type="email" placeholder="Your Work Email" required>
-    <textarea placeholder="How can we help you? (e.g., Requesting a Cloud Audit, Need DevSecOps Support)" rows="5"></textarea>
-
-    <h3 style="color:var(--accent);margin-top:20px;">I'm Interested In:</h3>
-    <div class="interactive-checkboxes">
-      <div class="domain-card" data-value="DevSecOps">DevSecOps</div>
-      <div class="domain-card" data-value="Cloud Security">Cloud Security</div>
-      <div class="domain-card" data-value="Offensive Security">Offensive Security</div>
-      <div class="domain-card" data-value="Web/Mobile Dev">Web/Mobile Dev</div>
-    </div>
-    <p id="selectedCount" style="color:var(--muted);margin-top:8px;font-size:14px;">No domains selected</p>
-    <input type="hidden" name="interests" id="selectedDomains">
-    <button type="submit">Send My Inquiry</button>
-  </form>
+  <h2 class="section-title">Connect With Us</h2>
+  <form id="contactForm">
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Work Email" required>
+    <textarea placeholder="How can we help you?" rows="5"></textarea>
+    <button type="submit">Send Inquiry</button>
+  </form>
 </section>
 
 <footer>
-  <div class="footer-content">
-    <div class="footer-section">
-      <h3>Trinity Tech</h3>
-      <p>DevSecOps, Cloud Security, and Digital Transformation Specialists.</p>
-    </div>
-    <div class="footer-section">
-      <h3>Quick Links</h3>
-      <a href="#about">Expertise</a>
-      <a href="#services">Services</a>
-      <a href="#careers">Careers</a>
-    </div>
-    <div class="footer-section">
-      <h3>Contact Us</h3>
-      <p><a href="mailto:pingabisec@gmail.com">sales@trinitytechq.com</a></p>
-      <p><a href="mailto:pingabisec@gmail.com">ping@trinitytechq.com</a></p>
-      <p style="margin-top:10px; font-size:12px; opacity:0.6;">(All emails redirect to pingabisec@gmail.com)</p>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>&copy; 2025 Trinity Tech Solutions Pvt Ltd. All rights reserved.</p>
-  </div>
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3>Trinity Tech</h3>
+      <p>DevSecOps, Cloud Security, and Digital Transformation Specialists.</p>
+    </div>
+    <div class="footer-section">
+      <h3>Quick Links</h3>
+      <a href="#about">Expertise</a>
+      <a href="#services">Services</a>
+      <a href="#careers">Careers</a>
+    </div>
+    <div class="footer-section">
+      <h3>Contact</h3>
+      <a href="mailto:sales@trinitytechq.com">sales@trinitytechq.com</a>
+      <a href="mailto:ping@trinitytechq.com">ping@trinitytechq.com</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Trinity Tech Solutions Pvt Ltd. All rights reserved.</p>
+  </div>
 </footer>
 
 <script>
-// --- Standard JS functions (Scroll, Form, Checkbox) ---
-const sections = document.querySelectorAll('section');
-const navLinks = document.querySelectorAll('.nav-links a');
+// Scroll active nav
+const sections=document.querySelectorAll('section');
+const navLinks=document.querySelectorAll('.nav-links a');
 window.addEventListener('scroll',()=>{
-  let current='';
-  sections.forEach(sec=>{
-    const top = window.scrollY;
-    if(top >= sec.offsetTop-100) current=sec.getAttribute('id');
-  });
-  navLinks.forEach(link=>{
-    link.classList.remove('active');
-    if(link.getAttribute('href').includes(current)) link.classList.add('active');
-  });
+  let current='';
+  sections.forEach(sec=>{
+    const top=window.scrollY;
+    if(top>=sec.offsetTop-100) current=sec.getAttribute('id');
+  });
+  navLinks.forEach(link=>{
+    link.classList.remove('active');
+    if(link.getAttribute('href').includes(current)) link.classList.add('active');
+  });
 });
 
-// --- Code Rain (Refined for Visual Quality) ---
-const codeStream = document.getElementById('code-stream');
-const chars = '01101001010101101010100101011101010101101010100101011101'; // Binary for high-tech look
-for(let i=0;i<60;i++){
-  const col = document.createElement('div');
-  col.className='column';
-  col.style.left=`${i*14}px`;
-  col.dataset.len=Math.floor(Math.random()*15+10);
-  codeStream.appendChild(col);
-}
-function animateColumns(){
-  document.querySelectorAll('.column').forEach(col=>{
-    let str='';
-    for(let i=0;i<col.dataset.len;i++) str+=chars.charAt(Math.floor(Math.random()*chars.length));
-    col.innerText=str;
-    col.style.animationDuration=`${Math.random()*4+4}s`;
-  });
-}
-animateColumns();
-setInterval(animateColumns,300);
-
-
-// --- 3D.js Network Visualization (Subtle Background) ---
-const threeContainer = document.getElementById('three-container');
-const panelWidth = threeContainer.clientWidth;
-const panelHeight = threeContainer.clientHeight;
-
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(75, panelWidth / panelHeight, 0.1, 1000);
-const renderer = new THREE.WebGLRenderer({alpha: true});
-renderer.setSize(panelWidth, panelHeight);
+// 3D subtle animation
+const threeContainer=document.getElementById('three-container');
+const scene=new THREE.Scene();
+const camera=new THREE.PerspectiveCamera(75,threeContainer.clientWidth/threeContainer.clientHeight,0.1,1000);
+const renderer=new THREE.WebGLRenderer({alpha:true});
+renderer.setSize(threeContainer.clientWidth,threeContainer.clientHeight);
 threeContainer.appendChild(renderer.domElement);
-
-const geometry = new THREE.IcosahedronGeometry(1.5, 1);
-const material = new THREE.MeshBasicMaterial({color: 0x36d399, wireframe: true, transparent: true, opacity: 0.1}); 
-
-const sphere = new THREE.Mesh(geometry, material);
-scene.add(sphere);
-
-camera.position.z = 3;
-
-function animate(){
-  requestAnimationFrame(animate);
-  sphere.rotation.y += 0.0005; 
-  sphere.rotation.x += 0.0002;
-  renderer.render(scene, camera);
-}
-animate();
-
-window.addEventListener('resize', () => {
-  const width = threeContainer.clientWidth;
-  const height = threeContainer.clientHeight;
-  renderer.setSize(width, height);
-  camera.aspect = width / height;
-  camera.updateProjectionMatrix();
-});
-
-// --- Domain card toggle and form submission ---
-const cards = document.querySelectorAll('.domain-card');
-const hiddenInput = document.getElementById('selectedDomains');
-const selectedCount = document.getElementById('selectedCount');
-
-function updateSelection() {
-  const selected = Array.from(cards).filter(c => c.classList.contains('selected')).map(c => c.dataset.value);
-  hiddenInput.value = selected.join(',');
-  if(selected.length === 0) selectedCount.innerText = "No domains selected";
-  else if(selected.length === 1) selectedCount.innerText = "1 domain selected: " + selected.join(', ');
-  else selectedCount.innerText = selected.length + " domains selected: " + selected.join(', ');
-}
-cards.forEach(card => {
-  card.addEventListener('click', () => {
-    card.classList.toggle('selected');
-    updateSelection();
-  });
-});
-
-document.getElementById('contactForm').addEventListener('submit', (e) => {
-  e.preventDefault(); 
-  alert("Thank you! Your inquiry has been submitted. We will respond shortly.");
-});
+const geometry=new THREE.IcosahedronGeometry(1.5,1);
+const material=new THREE.MeshBasicMaterial({color:0x36d399,wireframe:true,transparent:true,opacity:0.2});
+const sphere=new THREE.Mesh(geometry,material);
+scene.add(sphere);camera.position.z=3;
+function animate(){requestAnimationFrame(animate);sphere.rotation.y+=0.001;sphere.rotation.x+=0.0005;renderer.render(scene,camera);}animate();
 </script>
-
 </body>
 </html>
