@@ -1,117 +1,75 @@
-/* =========================
-   Global Reset & Typography
-   ========================= */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* =================== Reset & Typography =================== */
+* { margin:0; padding:0; box-sizing:border-box; }
 body {
-  font-family: "Inter", "Segoe UI", Roboto, sans-serif;
-  background-color: #0d1117;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  background: #0d1117;
   color: #e6edf3;
-  line-height: 1.7;
-}
-
-/* =========================
-   Navbar
-   ========================= */
-header {
-  background: rgba(13, 17, 23, 0.95);
-  backdrop-filter: blur(8px);
-  position: sticky;
-  top: 0;
-  z-index: 999;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px 50px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.logo a {
-  font-size: 24px;
-  font-weight: 700;
-  color: #00d1b2;
-  text-decoration: none;
-  letter-spacing: 0.5px;
-  transition: color 0.3s ease;
-}
-
-.logo a:hover {
-  color: #1abc9c;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 28px;
-}
-
-.nav-links a {
-  color: #e6edf3;
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: 500;
-  padding: 8px 14px;
-  border-radius: 6px;
-  transition: all 0.3s ease;
-}
-
-.nav-links a:hover {
-  background: rgba(0, 209, 178, 0.1);
-  color: #00d1b2;
-}
-
-.nav-links a.active {
-  background: #00d1b2;
-  color: #0d1117;
-  font-weight: 600;
-}
-
-/* =========================
-   Page Header Sections
-   ========================= */
-.page-header {
-  text-align: center;
-  padding: 100px 20px 60px;
-  background: linear-gradient(135deg, #0d1117, #111927, #0d1117);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.page-header h1 {
-  font-size: 40px;
-  margin-bottom: 16px;
-  font-weight: 700;
-  color: #ffffff;
-}
-
-.page-header p {
-  max-width: 700px;
-  margin: 0 auto;
-  font-size: 18px;
-  color: #b1bac4;
   line-height: 1.6;
 }
 
-/* =========================
-   Footer
-   ========================= */
-footer {
-  text-align: center;
-  padding: 25px;
-  background: #0d1117;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  font-size: 14px;
-  color: #8b949e;
+/* =================== Navbar =================== */
+header {
+  position: sticky; top:0; z-index:999;
+  background: rgba(13,17,23,0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
 }
+.navbar {
+  max-width: 1200px; margin:0 auto; padding:18px 40px;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.logo a {
+  font-size: 26px; font-weight:700;
+  background: linear-gradient(90deg,#00d1b2,#1abc9c,#0ff);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  text-decoration: none;
+}
+.nav-links { list-style:none; display:flex; gap:26px; }
+.nav-links a {
+  text-decoration:none; color:#e6edf3; font-weight:500; font-size:16px;
+  padding:8px 14px; border-radius:6px; transition:0.3s;
+}
+.nav-links a:hover { background: rgba(0,209,178,0.15); color:#00d1b2; }
+.nav-links a.active { background:#00d1b2; color:#0d1117; }
 
-footer p {
-  margin: 0;
+/* =================== Hero =================== */
+.hero { text-align:center; padding:120px 20px; background: radial-gradient(circle at top, #141b29, #0d1117); }
+.hero h1 {
+  font-size:3rem; font-weight:800;
+  background: linear-gradient(90deg,#00d1b2,#1abc9c,#0ff);
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+  animation: gradientShift 4s infinite alternate;
 }
+@keyframes gradientShift { from { background-position:0%; } to { background-position:100%; } }
+.hero p { max-width:700px; margin:20px auto; font-size:18px; color:#b1bac4; }
+.hero .cta { margin-top:30px; }
+.btn { padding:12px 24px; font-size:16px; font-weight:600; border-radius:6px; text-decoration:none; margin:0 10px; transition:0.3s; }
+.btn-primary { background:#00d1b2; color:#0d1117; }
+.btn-primary:hover { background:#1abc9c; }
+.btn-secondary { border:1px solid #00d1b2; color:#00d1b2; }
+.btn-secondary:hover { background: rgba(0,209,178,0.1); }
+
+/* =================== Sections =================== */
+section { padding:80px 20px; max-width:1100px; margin:0 auto; }
+section h2 { text-align:center; font-size:32px; margin-bottom:20px; color:#fff; }
+section p { text-align:center; color:#b1bac4; margin-bottom:40px; }
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; text-align:center; }
+.card { background:#141b29; padding:30px; border-radius:15px; border:1px solid rgba(255,255,255,0.05); transition:0.3s; }
+.card:hover { transform:translateY(-8px); box-shadow:0 15px 30px rgba(0,209,178,0.3); }
+.card h3 { margin-bottom:12px; font-size:20px; color:#00d1b2; }
+.card p { font-size:15px; color:#b1bac4; line-height:1.4; }
+
+/* =================== Footer =================== */
+footer { background:#0d1117; border-top:1px solid rgba(255,255,255,0.08); text-align:center; padding:25px; font-size:14px; color:#8b949e; }
+
+/* =================== Animations =================== */
+.fade-in { opacity:0; transform: translateY(20px); transition: all 0.8s ease; }
+.fade-in.show { opacity:1; transform: translateY(0); }
+header.shrink { padding:10px 40px; border-bottom:1px solid rgba(255,255,255,0.15); transition:0.3s; }
+
+/* =================== Buttons for contact =================== */
+form input, form textarea, form button {
+  width:100%; padding:12px; margin:8px 0; border-radius:6px; border:none; outline:none;
+}
+form button { background:#00d1b2; color:#0d1117; font-weight:600; cursor:pointer; transition:0.3s; }
+form button:hover { background:#1abc9c; }
