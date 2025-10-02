@@ -1,140 +1,117 @@
-/* Reset */
+/* =========================
+   Global Reset & Typography
+   ========================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Segoe UI", Roboto, Arial, sans-serif;
 }
 
 body {
-  background: #f5f7fa;
-  color: #222;
-  line-height: 1.6;
+  font-family: "Inter", "Segoe UI", Roboto, sans-serif;
+  background-color: #0d1117;
+  color: #e6edf3;
+  line-height: 1.7;
 }
 
-/* Navbar */
+/* =========================
+   Navbar
+   ========================= */
 header {
-  background: #0d1117;
-  padding: 15px 40px;
+  background: rgba(13, 17, 23, 0.95);
+  backdrop-filter: blur(8px);
   position: sticky;
   top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  z-index: 999;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 16px 50px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .logo a {
   font-size: 24px;
-  font-weight: bold;
-  color: #00d4ff;
+  font-weight: 700;
+  color: #00d1b2;
   text-decoration: none;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+}
+
+.logo a:hover {
+  color: #1abc9c;
 }
 
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 25px;
+  gap: 28px;
 }
 
 .nav-links a {
-  color: #fff;
+  color: #e6edf3;
   text-decoration: none;
   font-size: 16px;
+  font-weight: 500;
   padding: 8px 14px;
-  border-radius: 8px;
-  transition: 0.3s;
+  border-radius: 6px;
+  transition: all 0.3s ease;
 }
 
-.nav-links a:hover,
+.nav-links a:hover {
+  background: rgba(0, 209, 178, 0.1);
+  color: #00d1b2;
+}
+
 .nav-links a.active {
-  background: #00d4ff;
+  background: #00d1b2;
   color: #0d1117;
+  font-weight: 600;
 }
 
-/* Mobile menu */
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-}
-
-.menu-toggle span {
-  height: 3px;
-  width: 25px;
-  background: #fff;
-  margin: 4px 0;
-  border-radius: 5px;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    background: #0d1117;
-    width: 100%;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    padding: 20px;
-  }
-  .nav-links.active {
-    display: flex;
-  }
-  .menu-toggle {
-    display: flex;
-  }
-}
-
-/* Hero / Page Header */
+/* =========================
+   Page Header Sections
+   ========================= */
 .page-header {
-  padding: 80px 20px;
   text-align: center;
-  background: linear-gradient(135deg, #00d4ff, #0077ff);
-  color: #fff;
+  padding: 100px 20px 60px;
+  background: linear-gradient(135deg, #0d1117, #111927, #0d1117);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .page-header h1 {
   font-size: 40px;
-  margin-bottom: 15px;
+  margin-bottom: 16px;
+  font-weight: 700;
+  color: #ffffff;
 }
 
 .page-header p {
+  max-width: 700px;
+  margin: 0 auto;
   font-size: 18px;
-  opacity: 0.9;
+  color: #b1bac4;
+  line-height: 1.6;
 }
 
-/* Section styles */
-section {
-  padding: 60px 20px;
-  max-width: 1100px;
-  margin: auto;
-}
-
-.card {
-  background: #fff;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  margin-bottom: 30px;
-  transition: 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-}
-
-/* Footer */
+/* =========================
+   Footer
+   ========================= */
 footer {
-  background: #0d1117;
-  color: #fff;
   text-align: center;
   padding: 25px;
-  margin-top: 40px;
+  background: #0d1117;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 14px;
+  color: #8b949e;
+}
+
+footer p {
+  margin: 0;
 }
