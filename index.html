@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -182,19 +182,20 @@ footer {
       <h1>Trinity Tech</h1>
     </div>
     <div class="nav-links">
-      <a href="#about">Expertise</a>
-      <a href="#services">Services</a>
-      <a href="#careers">Careers</a>
-      <a href="#contact" class="cta">Get Started</a>
+      <a href="about.html">About</a>
+      <a href="expertise.html">Expertise</a>
+      <a href="services.html">Services</a>
+      <a href="careers.html">Careers</a>
+      <a href="contact.html" class="cta">Get Started</a>
     </div>
   </div>
 </header>
 
-<section id="hero" class="hero">
+<section class="hero">
   <div class="hero-left">
     <h1 class="title">Secure. Scalable. Reliable.</h1>
     <p class="lead">Trinity Tech specializes in DevSecOps, Cloud Security, and advanced application defense. We deliver secure, scalable, and resilient digital solutions for global enterprises.</p>
-    <a href="#contact" class="cta">Request a Security Roadmap</a>
+    <a href="contact.html" class="cta">Request a Security Roadmap</a>
     <div class="pill-container">
       <span class="pill">DevSecOps</span>
       <span class="pill">Cloud Security</span>
@@ -207,12 +208,12 @@ footer {
   </div>
 </section>
 
-<section id="about">
+<section>
   <h2 class="section-title">Our Mission & Expertise</h2>
   <p style="text-align:center;max-width:800px;margin:0 auto;color:#d8eaf0;">We are the confluence of Development, Security, and Cloud. Trinity Tech accelerates your business while embedding uncompromised security into every layer of your apps, networks, and infrastructure.</p>
 </section>
 
-<section id="services">
+<section>
   <h2 class="section-title">Our Core Service Offerings</h2>
   <div class="grid services-grid">
     <div class="card"><h3>DevSecOps</h3><p>Secure CI/CD, Kubernetes, Docker, and GitOps pipelines with automated compliance.</p></div>
@@ -222,7 +223,7 @@ footer {
   </div>
 </section>
 
-<section id="contact">
+<section>
   <h2 class="section-title">Connect With Us</h2>
   <form id="contactForm">
     <input type="text" placeholder="Your Name" required>
@@ -238,40 +239,30 @@ footer {
       <h3>Trinity Tech</h3>
       <p>DevSecOps, Cloud Security, and Digital Transformation Specialists.</p>
     </div>
+
     <div class="footer-section">
       <h3>Quick Links</h3>
-      <a href="#about">Expertise</a>
-      <a href="#services">Services</a>
-      <a href="#careers">Careers</a>
+      <a href="about.html">About Us</a>
+      <a href="expertise.html">Expertise (Fake Review)</a>
+      <a href="services.html">Services</a>
+      <a href="appdev.html">App Development (Web, Android, iOS)</a>
+      <a href="careers.html">Careers</a>
     </div>
+
     <div class="footer-section">
       <h3>Contact</h3>
       <a href="mailto:sales@trinitytechq.com">sales@trinitytechq.com</a>
       <a href="mailto:ping@trinitytechq.com">ping@trinitytechq.com</a>
     </div>
   </div>
+
   <div class="footer-bottom">
     <p>&copy; 2025 Trinity Tech Solutions Pvt Ltd. All rights reserved.</p>
   </div>
 </footer>
 
 <script>
-// Scroll active nav
-const sections=document.querySelectorAll('section');
-const navLinks=document.querySelectorAll('.nav-links a');
-window.addEventListener('scroll',()=>{
-  let current='';
-  sections.forEach(sec=>{
-    const top=window.scrollY;
-    if(top>=sec.offsetTop-100) current=sec.getAttribute('id');
-  });
-  navLinks.forEach(link=>{
-    link.classList.remove('active');
-    if(link.getAttribute('href').includes(current)) link.classList.add('active');
-  });
-});
-
-// 3D subtle animation
+// Subtle 3D animation
 const threeContainer=document.getElementById('three-container');
 const scene=new THREE.Scene();
 const camera=new THREE.PerspectiveCamera(75,threeContainer.clientWidth/threeContainer.clientHeight,0.1,1000);
