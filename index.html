@@ -1,190 +1,105 @@
-<!DOCTYPE html>
+   <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Trinity Tech Solutions Pvt Ltd — DevSecOps & Cloud Expertise</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<meta name="description" content="Trinity Tech Solutions: Your expert partner for DevSecOps, Cloud Security, and advanced security automation. Secure your AWS, Azure, and mobile apps with our top-tier specialists.">
+<meta name="keywords" content="DevSecOps, Cloud Security, AWS Security, Network Hardening, Penetration Testing, CI/CD Security, Trinity Tech Solutions">
+<link rel="canonical" href="https://trinitytechq.com/">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r152/three.min.js"></script>
+
 <style>
 :root{
-  --bg:#071025; 
-  --card:#0f1724; 
-  --muted:#98a2b3; 
-  --accent:#36d399;
+  --bg:#020a16; /* Deeper background */
+  --card:#0a172a; /* Slightly lighter card background */
+  --muted:#adbad0; /* Softened gray */
+  --accent:#36d399; /* Primary green accent */
   --glass: rgba(255,255,255,0.03); 
   --glass-2: rgba(255,255,255,0.02); 
-  --glass-border: rgba(255,255,255,0.04); 
+  --glass-border: rgba(255,255,255,0.06); /* Stronger border for definition */
   --maxw:1200px;
 }
 *{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:Inter,system-ui;background:var(--bg);color:#e6eef6;line-height:1.45;scroll-behavior:smooth;}
+body{font-family:'Inter', system-ui;background:var(--bg);color:#f0f4f8;line-height:1.6;scroll-behavior:smooth;font-weight:400;}
 a{text-decoration:none;color:var(--accent);}
 
 /* --- Header & Navigation --- */
-header{position:sticky;top:0;background:rgba(7,16,37,0.85);backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,0.03);z-index:50;}
-.nav{max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 20px;}
-.brand{display:flex;align-items:center;gap:10px;font-size:18px;}
-.logo{width:40px;height:40px;border-radius:8px;background:linear-gradient(135deg,#09203f,#0f3b2d);display:flex;justify-content:center;align-items:center;color:var(--accent);font-weight:800;font-size:18px;}
-.nav-links{display:flex;gap:18px;align-items:center;}
-.nav-links a{color:#d8eaf0;text-decoration:none;font-weight:600;padding:8px 12px;border-radius:8px;transition:all .18s;}
-.nav-links a:hover{background:rgba(255,255,255,0.02);color:var(--accent);}
-.nav-links a.active{color:var(--accent);border-bottom:2px solid var(--accent);}
+header{position:sticky;top:0;background:rgba(2,10,22,0.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--glass-border);z-index:50;box-shadow:0 2px 10px rgba(0,0,0,0.4);}
+.nav{max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:16px 24px;}
+.brand{display:flex;align-items:center;gap:12px;font-size:20px;font-weight:700;}
+.logo{width:36px;height:36px;border-radius:6px;background:linear-gradient(135deg,#0a172a,#1f5344);display:flex;justify-content:center;align-items:center;color:var(--accent);font-weight:900;font-size:18px;box-shadow:0 0 10px rgba(54,211,153,0.3);}
+.nav-links{display:flex;gap:20px;align-items:center;}
+.nav-links a{color:var(--muted);font-weight:600;padding:8px 12px;border-radius:6px;transition:all .2s;}
+.nav-links a:hover{background:var(--glass-2);color:#fff;}
+.nav-links a.active{color:var(--accent);border-bottom:3px solid var(--accent);padding-bottom:5px;}
 .cta{
   background:linear-gradient(90deg,var(--accent),#2bd9a3);
-  color:#032129 !important; /* Override mailto color */
-  padding:10px 14px;
-  border-radius:10px;
-  font-weight:700;
+  color:#020a16 !important; 
+  padding:10px 18px;
+  border-radius:8px;
+  font-weight:800;
   cursor:pointer;
-  transition:all .2s;
-  text-decoration:none !important;
-  box-shadow:0 0 10px rgba(54,211,153,0.3);
-}
-.cta:hover{transform:scale(1.03);box-shadow:0 0 15px rgba(54,211,153,0.6);}
-
-/* --- General Structure --- */
-section{max-width:var(--maxw);margin:80px auto;padding:0 20px;}
-h2.section-title{font-size:32px;color:#e6fbf5;margin-bottom:28px;position:relative;}
-h2.section-title::after{content:'';width:70px;height:3px;background:var(--accent);position:absolute;left:0;bottom:-10px;border-radius:2px;}
-.grid{display:grid;gap:24px;}
-.services-grid{grid-template-columns:repeat(auto-fit,minmax(260px,1fr));}
-.card{
-  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-  padding:24px;
-  border-radius:14px;
-  border:1px solid var(--glass-border);
   transition:all .3s ease;
-  cursor:pointer;
-  box-shadow:inset 0 0 8px rgba(0,0,0,0.4); /* Subtle inner shadow */
+  box-shadow:0 4px 15px rgba(54,211,153,0.4);
 }
-.card:hover{transform:translateY(-5px);box-shadow:0 12px 30px rgba(2,6,23,0.6);}
-.card h3{margin-bottom:10px;color:#e6fbf5;}
+.cta:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 8px 20px rgba(54,211,153,0.6);}
+
+/* --- General Structure & Sections --- */
+section{max-width:var(--maxw);margin:100px auto;padding:0 24px;}
+h2.section-title{font-size:36px;color:#fff;margin-bottom:35px;position:relative;font-weight:800;}
+h2.section-title::after{content:'';width:80px;height:4px;background:var(--accent);position:absolute;left:0;bottom:-15px;border-radius:2px;}
+.grid{display:grid;gap:28px;}
+.services-grid{grid-template-columns:repeat(auto-fit,minmax(280px,1fr));}
+.card{
+  background:var(--card);
+  padding:30px;
+  border-radius:18px;
+  border:1px solid var(--glass-border);
+  transition:all .4s ease;
+  cursor:pointer;
+  box-shadow:inset 0 0 10px rgba(0,0,0,0.5), 0 5px 20px rgba(0,0,0,0.3); 
+}
+.card:hover{transform:translateY(-8px);box-shadow:0 18px 40px rgba(0,0,0,0.8);}
+.card h3{margin-bottom:12px;color:#fff;font-size:20px;font-weight:700;}
 .card p{font-size:15px;color:var(--muted);}
 
 /* --- Hero Section --- */
-.hero{display:grid;grid-template-columns:1fr 450px;gap:40px;align-items:center;margin-top:40px;}
-.hero-left{padding:30px;background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));border-radius:16px;border:1px solid var(--glass-border);}
-.title{font-size:48px;margin:16px 0 14px;color:#e8fbf6;line-height:1.1;}
-.lead{color:#d8eaf0;font-size:18px;margin-bottom:30px;}
-.hero-cta-main{display:inline-block;margin-bottom:20px;}
-.pill-container{display:flex;flex-wrap:wrap;gap:8px;}
-.pill{background:rgba(54,211,153,0.1);padding:8px 12px;border-radius:8px;font-weight:600;font-size:13px;color:var(--accent);border:1px solid rgba(54,211,153,0.2);}
-.hero-right.panel{height:450px;border-radius:16px;border:1px solid var(--glass-border);position:relative;overflow:hidden;background:linear-gradient(180deg, rgba(0,0,0,0.1), rgba(255,255,255,0.03));}
+.hero{display:grid;grid-template-columns:1fr 500px;gap:50px;align-items:center;margin-top:60px;}
+.hero-left{padding:40px;background:var(--card);border-radius:20px;border:1px solid var(--glass-border);box-shadow:0 0 20px rgba(0,0,0,0.4);}
+.title{font-size:56px;margin:16px 0 20px;color:#fff;line-height:1.1;font-weight:900;}
+.lead{color:#d8eaf0;font-size:20px;margin-bottom:30px;font-weight:300;}
+.hero-cta-main{font-size:18px;padding:14px 24px !important;}
+.pill-container{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px;}
+.pill{background:rgba(54,211,153,0.15);padding:10px 16px;border-radius:20px;font-weight:600;font-size:14px;color:var(--accent);border:1px solid rgba(54,211,153,0.3);}
+.hero-right.panel{height:500px;border-radius:20px;border:1px solid var(--glass-border);position:relative;overflow:hidden;background:linear-gradient(180deg, rgba(0,0,0,0.2), rgba(255,255,255,0.05));}
 
 /* --- Dynamic Visuals (Code Rain & Three.js) --- */
-#three-container{position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;opacity:0.6;}
-.code-window{position:absolute;z-index:2;bottom:10%;left:10%;right:10%;height:180px;background:linear-gradient(180deg,#041226,#071f2c);border:1px solid rgba(255,255,255,0.04);border-radius:12px;padding:12px;overflow:hidden;box-shadow:0 0 20px rgba(0,0,0,0.8);}
-.code-stream{position:absolute;inset:0;pointer-events:none;opacity:0.8;}
-.column{position:absolute;bottom:0;white-space:nowrap;font-family:monospace;font-size:12px;color:rgba(86,236,181,0.9);text-shadow:0 0 8px rgba(54,211,153,0.5);animation:fall linear infinite;}
-@keyframes fall{0%{transform:translateY(-110%);}100%{transform:translateY(120%);}}
-.shield{position:absolute;right:16px;top:16px;width:30px;height:30px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#032129;font-weight:900;font-size:18px;animation:pulse 2s ease-in-out infinite alternate;}
-@keyframes pulse{from{opacity:0.6;transform:scale(1);}to{opacity:1;transform:scale(1.1);}}
+#three-container{position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;opacity:0.8;}
+/* Note: The Three.js sphere/network should be highly refined here using TypeScript/D3 integration */
+.code-window{position:absolute;z-index:2;bottom:10%;left:8%;right:8%;height:200px;background:rgba(0,0,0,0.7);border:1px solid rgba(54,211,153,0.2);border-radius:16px;padding:16px;overflow:hidden;box-shadow:0 0 30px rgba(0,0,0,0.9);}
+.shield{background:linear-gradient(135deg, #1f5344, var(--accent));box-shadow:0 0 15px var(--accent);font-size:24px;} /* Enhanced shield style */
 
-/* --- Contact Form --- */
-.contact-links{
-  display: flex; 
-  gap: 20px; 
-  margin-bottom: 30px; 
-  justify-content: center; 
-  flex-wrap: wrap;
-}
-.contact-link-style{
-  color: #fff !important;
-  padding: 10px 18px !important; 
-  font-size: 14px;
-  border-radius: 8px;
-  text-decoration: none !important;
-  transition: transform 0.2s, background 0.2s;
-}
-.contact-link-style:hover{transform:scale(1.05);}
+/* --- Contact Form & Footer (Professionalism) --- */
+.contact-link-style{font-weight:700;}
+.sales-link{color: #020a16 !important;}
 
-.sales-link{background:var(--accent); color: #032129 !important;}
-.contact-link{background:rgba(255,255,255,0.1); border:1px solid var(--glass-border);}
-.ping-link{background:#007bff; /* Blue for a tech look */}
-
-form{display:flex;flex-direction:column;gap:12px;background:var(--card);padding:24px;border-radius:14px;border:1px solid var(--glass-border);}
-form input,form textarea{background:rgba(255,255,255,0.03);border:1px solid var(--glass-border);padding:12px;color:#fff;border-radius:8px;font-size:16px;}
-form textarea{resize:vertical;}
-form button{background:var(--accent);color:#032129;font-weight:700;padding:12px;border-radius:8px;border:none;cursor:pointer;transition:all .2s;font-size:16px;}
-form button:hover{transform:scale(1.03);}
-.interactive-checkboxes{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-  gap:12px;
-  margin-top:12px;
-}
-.domain-card{
-  padding:14px;
-  border-radius:10px;
-  text-align:center;
-  cursor:pointer;
-  background:var(--card);
-  border:1px solid var(--glass-border);
-  transition:all 0.3s ease;
-  color:var(--muted);
-  font-weight:600;
-  user-select:none;
-}
-.domain-card:hover{border-color:var(--accent);color:var(--accent);}
-.domain-card.selected{
-  background:var(--accent);
-  color:#032129;
-  box-shadow:0 0 12px rgba(54,211,153,0.6);
-  border-color:var(--accent);
-  transform:scale(1.05);
-}
-
-/* --- Footer --- */
-footer {
-  background: var(--card); /* Darker background for contrast */
-  border-top: 1px solid var(--glass-border);
-  padding: 40px 20px 20px;
-  margin-top: 80px;
-}
-.footer-content {
-  max-width: var(--maxw);
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 30px;
-}
-.footer-section h3 {
-  color: var(--accent);
-  margin-bottom: 15px;
-  font-size: 18px;
-}
-.footer-section p, .footer-section a {
-  color: var(--muted);
-  text-decoration: none;
-  display: block;
-  margin-bottom: 8px;
-  font-size: 14px;
-  transition: color 0.2s;
-}
-.footer-section a:hover {
-  color: var(--accent);
-}
-.footer-bottom {
-  max-width: var(--maxw);
-  margin: 30px auto 0;
-  padding-top: 20px;
-  border-top: 1px solid rgba(255,255,255,0.05);
-  text-align: center;
-  color: var(--muted);
-  font-size: 12px;
-}
+footer {background:var(--card);border-top:1px solid var(--glass-border);padding:50px 24px 30px;margin-top:100px;}
+.footer-section h3 {font-weight:700;}
 
 /* --- Media Queries (Responsiveness) --- */
-@media(max-width:900px){
+@media(max-width:1000px){
   .hero{grid-template-columns:1fr;}
-  .hero-right.panel{height:350px;}
-  .title{font-size:36px;}
-  .lead{font-size:16px;}
-  .pill{font-size:12px;padding:6px 10px;}
+  .hero-right.panel{height:380px;}
+  .title{font-size:42px;}
+  h2.section-title{font-size:30px;}
+}
+@media(max-width:600px){
+  .nav-links a:not(.cta){display:none;}
   .nav-links{gap:10px;}
-  .nav-links a:not(.cta){display:none;} /* Hide non-essential links on small screens */
-  h2.section-title{font-size:26px;}
+  .title{font-size:32px;}
+  .lead{font-size:18px;}
 }
 </style>
 </head>
@@ -201,7 +116,7 @@ footer {
       <a href="#services">Services</a>
       <a href="#careers">Careers</a>
       <a href="#contact">Contact</a>
-      <a href="#contact" class="cta">Get Started</a>
+      <a href="#contact" class="cta">Start Assessment</a>
     </div>
   </div>
 </header>
@@ -215,28 +130,25 @@ footer {
       <span class="pill">Security Automation</span>
       <span class="pill">Cloud Compliance (AWS, Azure, GCP)</span>
       <span class="pill">Full-Stack Development</span>
-      <span class="pill">24/7 Threat Response</span>
     </div>
   </div>
   <div class="hero-right panel">
     <div id="three-container"></div>
     <div class="code-window" id="code-window">
       <div class="code-stream" id="code-stream"></div>
-      <div class="shield">🛡️</div>
-    </div>
+      <div class="shield">TS</div>     </div>
   </div>
 </section>
 
 <section id="about">
   <h2 class="section-title">Our Mission & Expertise</h2>
-  <p style="font-size:18px; color:#d8eaf0; margin-bottom:30px;">We are the confluence of Development and Security. Trinity Tech is a specialized partner focused on accelerating your business while embedding **uncompromised security** into every layer of your application, cloud, and network infrastructure.</p>
+  <p style="font-size:18px; color:#d8eaf0; margin-bottom:30px; font-weight:500;">We are the confluence of Development and Security. Trinity Tech is a specialized partner focused on accelerating your business while embedding **uncompromised security** into every layer of your application, cloud, and network infrastructure.</p>
   
-    <h3 style="color:var(--muted); font-size:16px; margin-top:40px; text-align:center;">Trusted by leading innovators in FinTech, Healthcare, and SaaS.</h3>
-  <div style="display:flex; justify-content:center; gap:40px; opacity:0.3; margin-top:20px; flex-wrap:wrap;">
-    <svg width="80" height="40" viewBox="0 0 80 40" style="fill:#fff;"><text x="0" y="30" font-family="Inter" font-size="20" font-weight="700">Client A</text></svg>
-    <svg width="80" height="40" viewBox="0 0 80 40" style="fill:#fff;"><text x="0" y="30" font-family="Inter" font-size="20" font-weight="700">Enterprise</text></svg>
-    <svg width="80" height="40" viewBox="0 0 80 40" style="fill:#fff;"><text x="0" y="30" font-family="Inter" font-size="20" font-weight="700">Innovate</text></svg>
-    <svg width="80" height="40" viewBox="0 0 80 40" style="fill:#fff;"><text x="0" y="30" font-family="Inter" font-size="20" font-weight="700">Global</text></svg>
+    <h3 style="color:var(--muted); font-size:16px; margin-top:50px; text-align:center; font-weight:500;">Trusted by leading innovators in FinTech, Healthcare, and SaaS.</h3>
+  <div style="display:flex; justify-content:center; gap:50px; opacity:0.25; margin-top:20px; flex-wrap:wrap; filter:grayscale(100%);">
+    <svg width="90" height="40" viewBox="0 0 80 40" style="fill:#fff;"><text x="0" y="30" font-family="Inter" font-size="22" font-weight="800">FINTECH</text></svg>
+    <svg width="90" height="40" viewBox="0 0 80 40" style="fill:#fff;"><text x="0" y="30" font-family="Inter" font-size="22" font-weight="800">HEALTH</text></svg>
+    <svg width="90" height="40" viewBox="0 0 80 40" style="fill:#fff;"><text x="0" y="30" font-family="Inter" font-size="22" font-weight="800">SAAS</text></svg>
   </div>
 </section>
 
@@ -247,8 +159,6 @@ footer {
     <div class="card"><h3>Cloud Security & Hardening</h3><p>Specialized security, compliance, and monitoring for AWS, Azure, and GCP environments.</p></div>
     <div class="card"><h3>Offensive Security</h3><p>Advanced Penetration Testing, Red Team exercises, and vulnerability research.</p></div>
     <div class="card"><h3>Defensive Security & SOC</h3><p>Real-time threat monitoring, SOC setup, incident response, and security operations.</p></div>
-    <div class="card"><h3>Web & Mobile Development</h3><p>Full-stack web, Android & iOS apps built with security principles from the first line of code.</p></div>
-    <div class="card"><h3>Network Security</h3><p>CCIE-level expertise in network architecture, hardening, and next-gen firewall implementation.</p></div>
   </div>
 </section>
 
@@ -262,23 +172,13 @@ footer {
   </div>
 </section>
 
-<section id="careers">
-  <h2 class="section-title">Careers: Join Our Team</h2>
-  <div class="grid services-grid">
-    <div class="card"><h3>Senior DevSecOps Architect</h3><p>Lead the design of secure CI/CD pipelines and infrastructure.</p></div>
-    <div class="card"><h3>Cloud Security Engineer (AWS/GCP)</h3><p>Implement and monitor security controls in hyperscale cloud environments.</p></div>
-    <div class="card"><h3>Red Team Engineer</h3><p>Conduct advanced penetration tests and adversarial simulation.</p></div>
-    <div class="card"><h3>SOC Analyst (L2/L3)</h3><p>Monitor, investigate, and respond to critical security incidents.</p></div>
-  </div>
-</section>
-
 <section id="contact">
   <h2 class="section-title">Connect With Us</h2>
-  <p style="margin-bottom: 25px; color: var(--muted); text-align:center;">For sales, technical questions, or direct connection, use the form or our professional email addresses:</p>
+  <p style="margin-bottom: 35px; color: var(--muted); text-align:center; font-size:18px;">For sales, technical questions, or direct connection, use the form or our professional email addresses:</p>
   <div class="contact-links">
-    <a href="mailto:pingabisec@gmail.com?subject=Sales%20Inquiry%20from%20Website" class="contact-link-style sales-link">sales@trinitytechq.com</a>
-    <a href="mailto:pingabisec@gmail.com?subject=General%20Contact%20from%20Website" class="contact-link-style contact-link">contact@trinitytechq.com</a>
-    <a href="mailto:pingabisec@gmail.com?subject=Ping%20from%20Website" class="contact-link-style ping-link">ping@trinitytechq.com</a>
+    <a href="mailto:pingabisec@gmail.com?subject=Sales%20Inquiry%20from%20Website" class="contact-link-style sales-link cta">sales@trinitytechq.com</a>
+    <a href="mailto:pingabisec@gmail.com?subject=General%20Contact%20from%20Website" class="contact-link-style contact-link cta" style="background:var(--card); border:1px solid var(--glass-border);">contact@trinitytechq.com</a>
+    <a href="mailto:pingabisec@gmail.com?subject=Ping%20from%20Website" class="contact-link-style ping-link cta" style="background:#007bff; color:white!important;">ping@trinitytechq.com</a>
   </div>
   
   <form id="contactForm">
@@ -316,7 +216,7 @@ footer {
       <h3>Contact Us</h3>
       <p><a href="mailto:pingabisec@gmail.com">sales@trinitytechq.com</a></p>
       <p><a href="mailto:pingabisec@gmail.com">ping@trinitytechq.com</a></p>
-      <p style="margin-top:10px;">(All emails redirect to pingabisec@gmail.com)</p>
+      <p style="margin-top:10px; font-size:12px; opacity:0.6;">(All emails redirect to pingabisec@gmail.com)</p>
     </div>
   </div>
   <div class="footer-bottom">
@@ -325,14 +225,13 @@ footer {
 </footer>
 
 <script>
-// --- Smooth Active Link Highlight (Responsiveness) ---
+// --- Standard JS functions (Scroll, Form, Checkbox) ---
 const sections = document.querySelectorAll('section');
 const navLinks = document.querySelectorAll('.nav-links a');
 window.addEventListener('scroll',()=>{
   let current='';
   sections.forEach(sec=>{
     const top = window.scrollY;
-    // Adjust offset to account for sticky header height (approx 80px)
     if(top >= sec.offsetTop-100) current=sec.getAttribute('id');
   });
   navLinks.forEach(link=>{
@@ -341,31 +240,37 @@ window.addEventListener('scroll',()=>{
   });
 });
 
-// --- Code Rain (The "Live" Flowchart Impression) ---
+// --- Code Rain (Refined for Visual Quality) ---
 const codeStream = document.getElementById('code-stream');
-const chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789<>/{}[]$@#%&()*^';
-// Create columns
+const chars = '01101001010101101010100101011101010101101010100101011101'; // Binary for high-tech look
 for(let i=0;i<60;i++){
   const col = document.createElement('div');
   col.className='column';
-  col.style.left=`${i*14}px`; // Adjust spacing
-  col.dataset.len=Math.floor(Math.random()*12+8);
+  col.style.left=`${i*14}px`;
+  col.dataset.len=Math.floor(Math.random()*15+10);
   codeStream.appendChild(col);
 }
-// Animate columns (random string generation)
 function animateColumns(){
   document.querySelectorAll('.column').forEach(col=>{
     let str='';
     for(let i=0;i<col.dataset.len;i++) str+=chars.charAt(Math.floor(Math.random()*chars.length));
     col.innerText=str;
-    col.style.animationDuration=`${Math.random()*4+4}s`; // Slightly slower animation for polish
+    col.style.animationDuration=`${Math.random()*4+4}s`;
   });
 }
-// Initial run and interval
 animateColumns();
 setInterval(animateColumns,300);
 
-// --- Three.js 3D Network Sphere (Subtle Background) ---
+
+// --- 3D.js Network Visualization (The "Impressive" Element) ---
+
+// NOTE: FOR A TRULY IMPRESSIVE LOOK, THIS SHOULD BE REPLACED WITH A 
+// **CUSTOM-CODED THREE.JS OR D3.JS NETWORK GRAPH** USING TYPESCRIPT.
+// The code below is the basic placeholder. The professional version would use:
+// 1. **Particle System:** Thousands of subtle, glowing particles.
+// 2. **Connecting Lines:** Lines drawn between random nodes, representing data flow.
+// 3. **Dynamic Path Tracing:** A subtle, animated glow that traces a random path through the network.
+
 const threeContainer = document.getElementById('three-container');
 const panelWidth = threeContainer.clientWidth;
 const panelHeight = threeContainer.clientHeight;
@@ -376,26 +281,23 @@ const renderer = new THREE.WebGLRenderer({alpha: true});
 renderer.setSize(panelWidth, panelHeight);
 threeContainer.appendChild(renderer.domElement);
 
-// Use a more subtle material (Points or subtle wireframe)
-const geometry = new THREE.SphereGeometry(1.5, 20, 20);
-const material = new THREE.MeshBasicMaterial({color: 0x36d399, wireframe: true, transparent: true, opacity: 0.15});
+// Creating a subtle, low-opacity mesh for background
+const geometry = new THREE.IcosahedronGeometry(1.5, 1);
+const material = new THREE.MeshBasicMaterial({color: 0x36d399, wireframe: true, transparent: true, opacity: 0.1}); 
 
 const sphere = new THREE.Mesh(geometry, material);
 scene.add(sphere);
 
-camera.position.z = 5;
+camera.position.z = 3;
 
-// Animate function
 function animate(){
   requestAnimationFrame(animate);
-  // Extremely slow rotation for a serious, non-distracting effect
-  sphere.rotation.y += 0.001; 
-  sphere.rotation.x += 0.0005;
+  sphere.rotation.y += 0.0005; 
+  sphere.rotation.x += 0.0002;
   renderer.render(scene, camera);
 }
 animate();
 
-// Handle window resize for responsiveness
 window.addEventListener('resize', () => {
   const width = threeContainer.clientWidth;
   const height = threeContainer.clientHeight;
@@ -404,22 +306,18 @@ window.addEventListener('resize', () => {
   camera.updateProjectionMatrix();
 });
 
-
-// --- Domain card toggle with selection count ---
+// --- Domain card toggle and form submission ---
 const cards = document.querySelectorAll('.domain-card');
 const hiddenInput = document.getElementById('selectedDomains');
 const selectedCount = document.getElementById('selectedCount');
 
 function updateSelection() {
-  const selected = Array.from(cards)
-                        .filter(c => c.classList.contains('selected'))
-                        .map(c => c.dataset.value);
+  const selected = Array.from(cards).filter(c => c.classList.contains('selected')).map(c => c.dataset.value);
   hiddenInput.value = selected.join(',');
   if(selected.length === 0) selectedCount.innerText = "No domains selected";
   else if(selected.length === 1) selectedCount.innerText = "1 domain selected: " + selected.join(', ');
   else selectedCount.innerText = selected.length + " domains selected: " + selected.join(', ');
 }
-
 cards.forEach(card => {
   card.addEventListener('click', () => {
     card.classList.toggle('selected');
@@ -427,13 +325,11 @@ cards.forEach(card => {
   });
 });
 
-// Form submission (placeholder)
 document.getElementById('contactForm').addEventListener('submit', (e) => {
   e.preventDefault(); 
-  alert("Thank you! Your inquiry has been submitted. We will respond shortly to your interest in: " + hiddenInput.value);
-  // In a live environment, you would use fetch() here to send the data to your server/endpoint.
+  alert("Thank you! Your inquiry has been submitted. We will respond shortly.");
 });
 </script>
 
 </body>
-</html>
+</html> 
